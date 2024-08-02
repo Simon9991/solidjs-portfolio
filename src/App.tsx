@@ -1,20 +1,26 @@
-import { createEffect, createSignal, type Component } from "solid-js";
+import { createSignal, type Component } from "solid-js";
 
 import logo from "./logo.svg";
 import styles from "./App.module.css";
 
 const App: Component = () => {
-  const appDiv = document.getElementById("app-div");
-  const [scroll, setScroll] = createSignal(0);
+  // const [scroll, setScroll] = createSignal(0);
+  // const maxScroll = 100;
+  // let throttleTimeout: number | null;
 
-  appDiv?.addEventListener("scroll", () => {
-    console.log("scrolling");
-    setScroll(appDiv.scrollTop);
-  });
+  // function handleScroll() {
+  //   if (throttleTimeout) return;
 
-  createEffect(() => {
-    console.log(scroll());
-  });
+  //   throttleTimeout = setTimeout(() => {
+  //     setScroll(window.scrollY);
+  //     throttleTimeout = null;
+  //   }, 25); // 25ms delay
+  // }
+
+  // window.addEventListener("scroll", handleScroll);
+  // onCleanup(() => {
+  //   window.removeEventListener("scroll", handleScroll);
+  // });
 
   return (
     <div id="app-div" class={styles.App}>
