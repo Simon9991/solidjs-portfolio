@@ -1,7 +1,7 @@
 import { createSignal, type Component } from "solid-js";
 
 import logo from "./logo.svg";
-import styles from "./App.module.css";
+import styles from "./App.module.scss";
 
 const App: Component = () => {
   // const [scroll, setScroll] = createSignal(0);
@@ -25,35 +25,12 @@ const App: Component = () => {
   return (
     <div id="app-div" class={styles.App}>
       <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p class="mt-8">
-          Hey! I am <b>Simon</b> and I am a <b>Software Engineer</b>!
-        </p>
-        <p class={styles.baseText}>
-          Currently living in <b>South Korea</b>. I thrive in solving problems
-          and finding solutions.
-        </p>
-        <p class={styles.baseText}>
-          I am passionate about anything related to code, NeoVim and helping
-          others.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
+        <p>Hey! I am</p>
+        <h1>Simon Bernabeu</h1>
+        <p>a software engineer currently living in South Korea</p>
+
+        <p class={styles.scrollText}>Scroll down to see more</p>
       </header>
-      <div class={styles.description}>
-        <p>Hello world!</p>
-        <p>Hello world!</p>
-        <p>Hello world!</p>
-        <p>Hello world!</p>
-        <p>Hello world!</p>
-        <p>Hello world!</p>
-      </div>
     </div>
   );
 };
