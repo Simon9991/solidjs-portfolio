@@ -1,4 +1,5 @@
 import { createSignal, type Component } from "solid-js";
+import { FiChevronsDown } from "solid-icons/fi";
 
 import logo from "./logo.svg";
 import styles from "./App.module.scss";
@@ -29,7 +30,9 @@ const App: Component = () => {
         <h1>Simon Bernabeu</h1>
         <p>a software engineer currently living in South Korea</p>
 
-        <p class={styles.scrollText}>Scroll down to see more</p>
+        <p class={styles.scrollText}>
+          Scroll down to see more <FiChevronsDown size={22} />
+        </p>
       </header>
     </div>
   );
