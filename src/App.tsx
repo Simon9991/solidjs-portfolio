@@ -15,7 +15,6 @@ const App: Component = () => {
             if (!greetingDiv || !header) return;
 
             const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const maxScroll = header?.clientHeight;
 
             const startFadingAt = 70; // Start fading after scrolling 100px
             const endFadingAt = 170; // Fully transparent after scrolling 300px
@@ -56,7 +55,9 @@ const App: Component = () => {
                 </div>
             </header>
 
-            <TechStack />
+            <div class={styles.otherInformation}>
+                <TechStack />
+            </div>
         </div>
     );
 };
