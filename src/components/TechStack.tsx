@@ -2,56 +2,50 @@ import { For, type Component } from 'solid-js';
 
 import styles from '../styles/TechStack.module.scss';
 
-interface StackDetailsProps {
+interface Stack {
     label: string;
     link: string;
     alt: string;
 }
 
-const StackDetails: Component<StackDetailsProps> = ({ label, link, alt }) => {
+const StackDetails: Component<Stack> = ({ label, link, alt }) => {
     return (
-        <div class={styles.stackItem}>
-            <img src={link} alt={alt} />
-            <p>{label}</p>
-        </div>
+        <a class={styles.stackItem} href="/">
+            <div class={styles.imgWrapper}>
+                <img src={link} alt={alt} />
+            </div>
+            <ul>
+                <li>Frontend</li>
+                <li>Backend</li>
+                <li>Mobile</li>
+            </ul>
+        </a>
     );
 };
 
 const TechStack: Component = () => {
-    interface Stack {
-        key: number;
-        label: string;
-        link: string;
-        alt: string;
-    }
-
     const stack: Stack[] = [
         {
-            key: 0,
             label: 'Rust',
             link: 'https://img.icons8.com/?size=100&id=B1VZ9ZRl8Vwt&format=png&color=000000',
             alt: 'Rust',
         },
         {
-            key: 1,
-            label: 'React',
-            link: 'https://img.icons8.com/color/96/000000/react-native.png',
+            label: 'C/C++',
+            link: 'https://img.icons8.com/color/96/000000/c-plus-plus-logo.png',
             alt: 'React',
         },
         {
-            key: 2,
-            label: 'JavaScript & TypeScript',
+            label: 'JavaScript',
             link: 'https://img.icons8.com/color/96/000000/typescript.png',
             alt: 'JavaScript - TypeScript',
         },
         {
-            key: 3,
             label: 'HTML',
             link: 'https://img.icons8.com/color/96/000000/html-5.png',
             alt: 'HTML',
         },
         {
-            key: 4,
             label: 'CSS',
             link: 'https://img.icons8.com/color/96/000000/css3.png',
             alt: 'CSS',
