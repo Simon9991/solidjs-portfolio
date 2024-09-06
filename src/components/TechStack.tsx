@@ -12,15 +12,13 @@ interface Stack {
 const StackDetails: Component<Stack> = ({ label, link, alt, projects }) => {
     return (
         <a class={styles.stackItem} href="/">
-                <h3>{label}</h3>
+            <h3>{label}</h3>
             <div class={styles.imgWrapper}>
                 <img src={link} alt={alt} />
             </div>
-                <ul>
-                    <For each={projects}>
-                        {(project) => <li>{project}</li>}
-                    </For>
-                </ul>
+            <ul>
+                <For each={projects}>{(project) => <li>{project}</li>}</For>
+            </ul>
         </a>
     );
 };
@@ -43,7 +41,14 @@ const TechStack: Component = () => {
             label: 'JavaScript',
             link: 'https://img.icons8.com/color/96/000000/typescript.png',
             alt: 'JavaScript - TypeScript',
-            projects: ['SvelteKit', 'SolidJS', 'React', 'React Native App', 'NodeJS Backend', 'Discord Bots'],
+            projects: [
+                'SvelteKit',
+                'SolidJS',
+                'React',
+                'React Native App',
+                'NodeJS Backend',
+                'Discord Bots',
+            ],
         },
         {
             label: 'HTML',

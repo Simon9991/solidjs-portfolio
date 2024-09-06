@@ -92,31 +92,17 @@ $mobile-breakpoint: 768px;
         }
 
         // Individual hover colors
-        $hover-colors: (
-            #3d384a,
-            #3d4563,
-            #3c526b,
-            #704c39,
-            #334f61,
-            #595175,
-        );
+        $hover-colors: (#3d384a, #3d4563, #3c526b, #704c39, #334f61, #595175);
 
-    $hover-height: (
-        21.5rem,
-        21.5rem,
-        25.5rem,
-        19rem,
-        19rem,
-        19rem,
-    );
+        $hover-height: (21.5rem, 21.5rem, 25.5rem, 19rem, 19rem, 19rem);
 
-@for $i from 1 through 6 {
-    &:nth-child(#{$i}):hover {
-        height: nth($hover-height, $i);
-        background-color: nth($hover-colors, $i);
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}):hover {
+                height: nth($hover-height, $i);
+                background-color: nth($hover-colors, $i);
+            }
+        }
     }
-}
-}
 }
 
 h2 {
