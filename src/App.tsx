@@ -1,9 +1,10 @@
 import type { Component } from 'solid-js';
 
 import { useDarkMode } from './components/UI/darkMode';
-import ToggleSwitch from './components/UI/ToggleSwitch';
 import TechUniverse from './components/TechUniverse';
 import Greeting from './components/Greeting';
+import DarkModeToggle from './components/UI/DarkModeToggleSwitch';
+import LanguageSelect from './components/UI/LanguageSelect';
 
 const App: Component = () => {
     const [isDarkMode, { toggle }] = useDarkMode();
@@ -14,7 +15,10 @@ const App: Component = () => {
         >
             <div class="w-full fixed z-10 dark:bg-black dark:bg-opacity-10 bg-indigo-500 bg-opacity-10 top-0 flex items-center justify-between px-8 backdrop-blur-sm h-20">
                 <h1 class="font-bold text-4xl mb-0">SB. Dev.</h1>
-                <ToggleSwitch />
+                <div class="flex items-center gap-4">
+                    <LanguageSelect />
+                    <DarkModeToggle />
+                </div>
             </div>
 
             <Greeting />
