@@ -80,7 +80,20 @@ $text-secondary-color: #d4d4d4;
 }
 
 .otherInformation {
-    min-height: 100dvh;
+    min-height: 50dvh;
+}
+
+.aboutMe {
+    min-height: 80dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-inline: 1rem;
+
+    @media (min-width: 768px) {
+        padding-inline: 8rem;
+    }
 }
 
 .link {

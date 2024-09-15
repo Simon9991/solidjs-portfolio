@@ -40,6 +40,7 @@ $mobile-breakpoint: 768px;
         padding: 1rem;
         @include box-shadow;
         height: 12rem;
+        width: 5rem;
         gap: 1.25rem;
         overflow: hidden;
 
@@ -47,6 +48,8 @@ $mobile-breakpoint: 768px;
             color: $text-primary-color;
             font-weight: 800;
             font-size: 1.5rem;
+            text-align: center;
+            width: 100%;
         }
 
         .imgWrapper {
@@ -63,6 +66,8 @@ $mobile-breakpoint: 768px;
             flex-direction: column;
             gap: 0.5rem;
             transition: opacity 0.25s ease;
+            list-style-type: disc;
+            padding-left: 1rem;
         }
 
         p,
@@ -80,11 +85,6 @@ $mobile-breakpoint: 768px;
         // Hover effects
         &:hover {
             flex-grow: 3;
-
-            img {
-                left: 0;
-                transform: translateX(0);
-            }
 
             ul {
                 opacity: 1;
