@@ -51,7 +51,7 @@ const projects = [
 
 export default function TechUniverse() {
     const [isDarkMode] = useDarkMode();
-    const [selectedTech, setSelectedTech] = createSignal<string | null>(null);
+    const [selectedTech, setSelectedTech] = createSignal<string | null>('Rust');
     const [hoveredProject, setHoveredProject] = createSignal<string | null>(null);
     const [hoveredTech, setHoveredTech] = createSignal<string | null>(null);
 
