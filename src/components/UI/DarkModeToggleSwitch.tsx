@@ -2,7 +2,7 @@ import { Motion } from 'solid-motionone';
 import { FiMoon, FiSun } from 'solid-icons/fi';
 import { useDarkMode } from './darkMode';
 
-const ToggleSwitch = () => {
+const DarkModeToggle = () => {
     const [isDarkMode, { toggle }] = useDarkMode();
 
     return (
@@ -28,4 +28,4 @@ const ToggleSwitch = () => {
     );
 };
 
-export default ToggleSwitch;
+export default DarkModeToggle;
