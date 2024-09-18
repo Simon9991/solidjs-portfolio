@@ -1,18 +1,19 @@
 import { createSignal, For } from 'solid-js';
 import { Motion } from 'solid-motionone';
+import { type Language, LanguageOptions, useLanguageSelect } from '../Stores/LanguageSelectSignal';
 
 const languages = [
-    { code: 'en', name: 'English', flag: '/images/en-flag.png' },
-    { code: '한', name: '한국어', flag: '/images/ko-flag.png' },
+    { code: LanguageOptions.en, name: 'English', short: 'EN', flag: '/images/en-flag.png' },
+    { code: LanguageOptions.ko, name: '한국어', short: '한', flag: '/images/ko-flag.png' },
 ];
 
 export default function LanguageSelect() {
-    const [language, setLanguage] = createSignal<'en' | 'ko'>('en');
+    const { language, setLanguage } = useLanguageSelect();
     const [isOpen, setIsOpen] = createSignal(false);
 
     const toggleDropdown = () => setIsOpen(!isOpen());
 
-    const selectLanguage = (lang: 'en' | 'ko') => {
+    const selectLanguage = (lang: Language) => {
         setLanguage(lang);
         setIsOpen(false);
     };
@@ -53,7 +54,7 @@ export default function LanguageSelect() {
                     <For each={languages}>
                         {(lang) => (
                             <button
-                                onClick={() => selectLanguage(lang.code as 'en' | 'ko')}
+                                onClick={() => selectLanguage(lang.code)}
                                 class="flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                                 role="menuitem"
                                 type="button"

@@ -2,7 +2,7 @@ import { createSignal, For, Show } from 'solid-js';
 import { Motion, Presence } from 'solid-motionone';
 import { FiCode, FiDatabase, FiLayout } from 'solid-icons/fi';
 import { SiRust, SiCplusplus, SiJavascript, SiHtml5, SiCss3, SiPostgresql } from 'solid-icons/si';
-import { useDarkMode } from './UI/darkMode';
+import { useDarkMode } from './UI/DarkMode';
 
 const techStack = [
     { name: 'Rust', icon: SiRust, color: '#dea584', darkColor: '#b08367' },

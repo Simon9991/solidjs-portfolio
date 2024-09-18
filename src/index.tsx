@@ -3,7 +3,8 @@ import { render } from 'solid-js/web';
 
 import './index.css';
 import App from './App';
-import { DarkModeProvider } from './components/UI/darkMode';
+import { DarkModeProvider } from './components/UI/DarkMode';
+import { LanguageSelectProvider } from './components/Stores/LanguageSelectSignal';
 
 const root = document.getElementById('root');
 
@@ -16,7 +17,9 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 render(
     () => (
         <DarkModeProvider>
-            <App />
+            <LanguageSelectProvider>
+                <App />
+            </LanguageSelectProvider>
         </DarkModeProvider>
     ),
     // biome-ignore lint/style/noNonNullAssertion: <explanation>

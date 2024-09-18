@@ -1,13 +1,13 @@
 import type { Component } from 'solid-js';
 
-import { useDarkMode } from './components/UI/darkMode';
+import { useDarkMode } from './components/UI/DarkMode';
 import TechUniverse from './components/TechUniverse';
 import Greeting from './components/Greeting';
 import DarkModeToggle from './components/UI/DarkModeToggleSwitch';
 import LanguageSelect from './components/UI/LanguageSelect';
 
 const App: Component = () => {
-    const [isDarkMode, { toggle }] = useDarkMode();
+    const [isDarkMode] = useDarkMode();
 
     return (
         <div
