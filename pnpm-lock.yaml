@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@solid-primitives/i18n':
+        specifier: ^2.1.1
+        version: 2.1.1(solid-js@1.8.22)
       lucide-solid:
         specifier: ^0.441.0
         version: 0.441.0(solid-js@1.8.22)
@@ -507,6 +510,11 @@ packages:
 
   '@solid-primitives/event-listener@2.3.3':
     resolution: {integrity: sha512-DAJbl+F0wrFW2xmcV8dKMBhk9QLVLuBSW+TR4JmIfTaObxd13PuL7nqaXnaYKDWOYa6otB00qcCUIGbuIhSUgQ==}
+    peerDependencies:
+      solid-js: ^1.6.12
+
+  '@solid-primitives/i18n@2.1.1':
+    resolution: {integrity: sha512-1p9B8hveu+gzFRWfXcRtdzzEdr7gw3c8uLXm+2bU33JHgiI8kYJsWvG128sE6vU1ZtYGPrGq980Jd6hxYupyZQ==}
     peerDependencies:
       solid-js: ^1.6.12
 
@@ -1650,6 +1658,10 @@ snapshots:
   '@solid-primitives/event-listener@2.3.3(solid-js@1.8.22)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.22)
+      solid-js: 1.8.22
+
+  '@solid-primitives/i18n@2.1.1(solid-js@1.8.22)':
+    dependencies:
       solid-js: 1.8.22
 
   '@solid-primitives/keyboard@1.2.8(solid-js@1.8.22)':
