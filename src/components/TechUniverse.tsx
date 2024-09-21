@@ -66,14 +66,18 @@ export default function TechUniverse() {
             : projects;
 
     return (
-        <div class="min-h-screen p-8 pt-24 flex flex-col items-center justify-center transition-all ${isDarkMode() ? dark:bg-gray-900 dark:text-white bg-gray-100 text-gray-800">
+        <div class="min-h-screen p-8 pt-24 flex flex-col items-center justify-center transition-all">
             <h1 class="font-bold text-4xl mb-8">My Tech Universe</h1>
             <div class="w-full max-w-4xl rounded-lg shadow-lg p-8 dark:bg-gray-800 bg-white">
                 <div class="grid grid-cols-3 gap-4 mb-8">
                     <For each={techStack}>
                         {(tech) => (
                             <Motion.button
-                                class={`p-4 rounded-lg text-white flex flex-col items-center justify-center shadow-md ${selectedTech() === tech.name ? 'ring-4 ring-blue-300 dark:ring-blue-500' : ''}`}
+                                class="p-4 rounded-lg text-white flex flex-col items-center justify-center shadow-md"
+                                classList={{
+                                    'ring-4 ring-blue-300 dark:ring-blue-500':
+                                        selectedTech() === tech.name,
+                                }}
                                 style={{
                                     'background-color': isDarkMode() ? tech.darkColor : tech.color,
                                 }}
