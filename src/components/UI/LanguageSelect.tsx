@@ -1,10 +1,11 @@
-import { createSignal, For } from 'solid-js';
+import { createSignal, For, onCleanup, onMount } from 'solid-js';
 import { Motion } from 'solid-motionone';
 import { type Language, LanguageOptions, useLanguageSelect } from '../Stores/LanguageSelectSignal';
 
 const languages = [
     { code: LanguageOptions.en, name: 'English', short: 'EN', flag: '/images/en-flag.png' },
     { code: LanguageOptions.ko, name: '한국어', short: '한', flag: '/images/ko-flag.png' },
+    { code: LanguageOptions.fr, name: 'Français', short: 'FR', flag: '/images/fr-flag.png' },
 ];
 
 export default function LanguageSelect() {
@@ -17,6 +18,25 @@ export default function LanguageSelect() {
         setLanguage(lang);
         setIsOpen(false);
     };
+
+    // on click outside of the dropdown, close the dropdown
+    const handleClickOutside = (event: MouseEvent) => {
+        if (
+            isOpen() &&
+            event.target instanceof HTMLElement &&
+            !event.target.contains(event.target)
+        ) {
+            setIsOpen(false);
+        }
+    };
+
+    onMount(() => {
+        window.addEventListener('click', handleClickOutside);
+    });
+
+    onCleanup(() => {
+        window.removeEventListener('click', handleClickOutside);
+    });
 
     return (
         <div class="relative">
@@ -55,7 +75,10 @@ export default function LanguageSelect() {
                         {(lang) => (
                             <button
                                 onClick={() => selectLanguage(lang.code)}
-                                class="flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                class="flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                                classList={{
+                                    'bg-slate-50 dark:bg-slate-700': lang.code === language(),
+                                }}
                                 role="menuitem"
                                 type="button"
                             >

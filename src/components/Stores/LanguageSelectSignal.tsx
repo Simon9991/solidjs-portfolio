@@ -1,8 +1,9 @@
 import { createContext, useContext, createSignal, type JSX, type Accessor } from 'solid-js';
 
 export const LanguageOptions = {
-    en: 'EN',
-    ko: '한',
+    en: 'en',
+    ko: 'ko',
+    fr: 'fr',
 } as const;
 export type Language = (typeof LanguageOptions)[keyof typeof LanguageOptions];
 
