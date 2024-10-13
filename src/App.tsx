@@ -10,6 +10,7 @@ import type { Dict } from './i18n/en';
 import { useLanguageSelect } from './components/Stores/LanguageSelectSignal';
 import LoadingIndicator from './components/UI/LoadingIndicator';
 import AboutMe from './components/AboutMe';
+import ContactMe from './components/ContactMe';
 
 export type Locale = 'en' | 'ko' | 'fr';
 export type RawDictionary = Dict;
@@ -44,6 +45,7 @@ const App: Component = () => {
                     <Greeting />
                     <AboutMe />
                     <TechUniverse />
+                    <ContactMe />
                 </Show>
             </Suspense>
         </div>

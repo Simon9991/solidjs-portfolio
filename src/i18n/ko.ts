@@ -79,4 +79,20 @@ export const dict: Dict = {
             },
         ],
     },
+
+    // Contact Me
+    contactMe: {
+        title: '연락하기',
+        form: {
+            name: '이름',
+            email: '이메일',
+            message: '메시지',
+            submit: '메시지 보내기',
+        },
+        getInTouch: '연락하세요',
+        description: '질문이 있거나 단순히 연락하고 싶으시면 언제든 연락 주세요!',
+        email: 'your.email@example.com',
+        github: 'GitHub',
+        linkedin: 'LinkedIn',
+    },
 };

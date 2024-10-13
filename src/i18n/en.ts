@@ -83,6 +83,22 @@ export const dict = {
             },
         ],
     },
+
+    // Contact Me
+    contactMe: {
+        title: 'Contact Me',
+        form: {
+            name: 'Name',
+            email: 'Email',
+            message: 'Message',
+            submit: 'Send Message',
+        },
+        getInTouch: 'Get in Touch',
+        description: 'Feel free to reach out if you have any questions or just want to connect!',
+        email: 'your.email@example.com',
+        github: 'GitHub',
+        linkedin: 'LinkedIn',
+    },
 };
 
 export type Dict = typeof dict;

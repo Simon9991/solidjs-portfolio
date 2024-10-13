@@ -80,4 +80,21 @@ export const dict: Dict = {
             },
         ],
     },
+
+    // Contact Me
+    contactMe: {
+        title: 'Contactez-moi',
+        form: {
+            name: 'Nom',
+            email: 'E-mail',
+            message: 'Message',
+            submit: 'Envoyer le message',
+        },
+        getInTouch: 'Entrez en contact',
+        description:
+            "N'hésitez pas à me contacter si vous avez des questions ou si vous voulez simplement échanger !",
+        email: 'votre.email@exemple.com',
+        github: 'GitHub',
+        linkedin: 'LinkedIn',
+    },
 };
