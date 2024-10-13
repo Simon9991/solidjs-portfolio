@@ -25,7 +25,9 @@ export default function TechUniverse() {
     return (
         <section class="py-12">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center text-roland-red mb-12">My Projects</h2>
+                <h2 class="text-4xl font-bold text-center text-roland-red mb-12">
+                    {t('techUniverse.title')}
+                </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <For each={t('techUniverse.projects')}>
                         {(project) => {
