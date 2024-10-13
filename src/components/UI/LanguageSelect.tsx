@@ -42,7 +42,7 @@ export default function LanguageSelect() {
         <div class="relative">
             <button
                 onClick={toggleDropdown}
-                class="flex items-center space-x-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400"
+                class="flex items-center space-x-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-md shadow-sm focus:outline-none transition-all duration-300 hover:ring-2 hover:ring-eiffel-gold dark:hover:ring-eiffel-gold-light"
                 type="button"
             >
                 <img
@@ -50,7 +50,7 @@ export default function LanguageSelect() {
                     alt={language()}
                     class="w-5 h-5 rounded-full object-cover"
                 />
-                <span class="text-sm font-medium text-gray-700 dark:text-gray-200">
+                <span class="text-sm font-medium text-hangul-gray dark:text-hangul-silver">
                     {language().toUpperCase()}
                 </span>
             </button>
@@ -75,7 +75,7 @@ export default function LanguageSelect() {
                         {(lang) => (
                             <button
                                 onClick={() => selectLanguage(lang.code)}
-                                class="flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                                class="flex items-center w-full px-4 py-2 text-sm text-hangul-gray dark:text-hangul-silver hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
                                 classList={{
                                     'bg-slate-50 dark:bg-slate-700': lang.code === language(),
                                 }}

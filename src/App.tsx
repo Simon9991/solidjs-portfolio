@@ -28,12 +28,12 @@ const App: Component = () => {
 
     return (
         <div
-            class={`${isDarkMode() ? 'dark' : ''} min-h-screen relative overflow-auto transition-all dark:bg-gray-900 dark:text-white bg-gray-100 text-gray-800`}
+            class={`${isDarkMode() ? 'dark' : ''} min-h-screen relative overflow-auto transition-all dark:bg-midnight-blue bg-soft-white`}
         >
             <Suspense fallback={<LoadingIndicator />}>
                 <Show when={dict()}>
-                    <div class="w-full fixed z-10 dark:bg-black dark:bg-opacity-10 bg-indigo-500 bg-opacity-10 top-0 flex items-center justify-between px-8 backdrop-blur-sm h-20">
-                        <h1 class="font-bold text-4xl mb-0">SB. Dev.</h1>
+                    <div class="w-full fixed z-10 dark:bg-black dark:bg-opacity-10 bg-hangul-gray bg-opacity-10 top-0 flex items-center justify-between px-8 backdrop-blur-sm h-20">
+                        <h1 class="font-bold text-4xl mb-0 text-roland-red">SB. Dev.</h1>
                         <div class="flex items-center gap-4">
                             <LanguageSelect />
                             <DarkModeToggle />
