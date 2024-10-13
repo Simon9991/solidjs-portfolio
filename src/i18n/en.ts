@@ -1,7 +1,9 @@
 export const dict = {
   greeting: {
     hello: "Bonjour! I am Simon",
-    description: "A French fullstack developer in South Korea",
+    // description: "A French fullstack developer in South Korea",
+    description:
+      "Combining French elegance with Korean innovation to build cutting-edge applications.",
     cards: {
       fullstack: "Fullstack Expertise",
       international: "International Experience",

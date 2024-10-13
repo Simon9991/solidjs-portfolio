@@ -9,6 +9,7 @@ import * as i18n from '@solid-primitives/i18n';
 import type { Dict } from './i18n/en';
 import { useLanguageSelect } from './components/Stores/LanguageSelectSignal';
 import LoadingIndicator from './components/UI/LoadingIndicator';
+import AboutMe from './components/AboutMe';
 
 export type Locale = 'en' | 'ko' | 'fr';
 export type RawDictionary = Dict;
@@ -41,6 +42,7 @@ const App: Component = () => {
                     </div>
 
                     <Greeting />
+                    <AboutMe />
                     <TechUniverse />
                 </Show>
             </Suspense>
