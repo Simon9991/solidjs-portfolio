@@ -4,8 +4,8 @@ import { type Language, LanguageOptions, useLanguageSelect } from '../Stores/Lan
 
 const languages = [
     { code: LanguageOptions.en, name: 'English', short: 'EN', flag: '/images/en-flag.png' },
-    { code: LanguageOptions.ko, name: '한국어', short: '한', flag: '/images/ko-flag.png' },
     { code: LanguageOptions.fr, name: 'Français', short: 'FR', flag: '/images/fr-flag.png' },
+    { code: LanguageOptions.ko, name: '한국어', short: '한', flag: '/images/ko-flag.png' },
 ];
 
 export default function LanguageSelect() {
@@ -77,7 +77,8 @@ export default function LanguageSelect() {
                                 onClick={() => selectLanguage(lang.code)}
                                 class="flex items-center w-full px-4 py-2 text-sm text-hangul-gray dark:text-hangul-silver hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
                                 classList={{
-                                    'bg-slate-50 dark:bg-slate-700': lang.code === language(),
+                                    'bg-seoul-sky bg-opacity-20 dark:bg-slate-700 dark:bg-opacity-100':
+                                        lang.code === language(),
                                 }}
                                 role="menuitem"
                                 type="button"

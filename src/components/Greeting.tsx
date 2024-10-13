@@ -20,19 +20,19 @@ export default function Greeting() {
             </div> */}
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-                    <FiCode class="text-4xl mb-2 text-indigo-500" />
+                    <FiCode class="text-4xl mb-2 text-seoul-sky-accent" />
                     <p class="text-hangul-gray dark:text-hangul-silver">
                         {t('greeting.cards.fullstack')}
                     </p>
                 </div>
                 <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-                    <FiGlobe class="text-4xl mb-2 text-green-500" />
+                    <FiGlobe class="text-4xl mb-2 text-cassis-lavender-accent" />
                     <p class="text-hangul-gray dark:text-hangul-silver">
                         {t('greeting.cards.international')}
                     </p>
                 </div>
                 <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-                    <FiCoffee class="text-4xl mb-2 text-red-500" />
+                    <FiCoffee class="text-4xl mb-2 text-roland-red" />
                     <p class="text-hangul-gray dark:text-hangul-silver">
                         {t('greeting.cards.lowLevel')}
                     </p>
