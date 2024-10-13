@@ -95,10 +95,11 @@ export default function ContactMe() {
                             </div>
                             <button
                                 type="submit"
-                                class="bg-roland-red hover:bg-roland-red-light text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300"
-                                disabled={status() === 'sending'}
+                                class="bg-roland-red hover:bg-roland-red-light text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-roland-red"
+                                disabled
                             >
-                                {t('contactMe.form.submit')}
+                                {t('contactMe.form.submit')}{' '}
+                                <span class="italic">(Coming Soon)</span>
                             </button>
                             {status() === 'success' && <p class="text-green-600">Message sent.</p>}
                             {status() === 'error' && <p class="text-red-600">An error occured.</p>}
