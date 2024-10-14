@@ -28,9 +28,9 @@ export default function AboutMe() {
     };
 
     return (
-        <section class="py-12">
+        <section class="min-h-[100dvh] flex justify-center items-center mb-48 md:mb-0">
             <div class="container mx-auto px-4 lg:max-w-5xl">
-                <h2 class="text-4xl font-bold text-center text-roland-red dark:text-roland-red-light mb-6">
+                <h2 class="text-5xl font-bold text-center text-roland-red dark:text-roland-red-light mb-6">
                     {t('aboutMe.title')}
                 </h2>
                 <div class="grid md:flex md:flex-row gap-12 items-center bg-cassis-lavender-accent bg-opacity-5 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm">

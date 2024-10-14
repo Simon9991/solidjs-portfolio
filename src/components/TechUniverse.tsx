@@ -23,9 +23,9 @@ export default function TechUniverse() {
     const [hoveredProject, setHoveredProject] = createSignal<string>('');
 
     return (
-        <section class="py-12">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center text-roland-red dark:text-roland-red-light mb-12">
+        <section class="min-h-[100dvh] flex justify-center items-center mb-48 md:mb-0">
+            <div class="container mx-auto px-4 lg:max-w-5xl">
+                <h2 class="text-5xl font-bold text-center text-roland-red dark:text-roland-red-light mb-12">
                     {t('techUniverse.title')}
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

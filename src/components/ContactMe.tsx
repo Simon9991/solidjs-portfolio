@@ -37,12 +37,12 @@ export default function ContactMe() {
     };
 
     return (
-        <section class="py-12">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center text-roland-red mb-12">
+        <section class="min-h-[100dvh] flex justify-center items-center">
+            <div class="container mx-auto px-4 lg:max-w-5xl">
+                <h2 class="text-5xl font-bold text-center text-roland-red dark:text-roland-red-light mb-12">
                     {t('contactMe.title')}
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-cassis-lavender-accent bg-opacity-5 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm">
                     <div>
                         <form onSubmit={handleSubmit} class="space-y-4">
                             <div>
@@ -116,7 +116,7 @@ export default function ContactMe() {
                         </div>
                         <div class="space-y-4">
                             <div class="flex items-center">
-                                <FiMail class="w-6 h-6 text-roland-red mr-4" />
+                                <FiMail class="w-6 h-6 text-roland-red dark:text-roland-red-light mr-4" />
                                 <a
                                     href="mailto:your.email@example.com"
                                     class="text-hangul-gray dark:text-hangul-silver hover:text-roland-red dark:hover:text-roland-red-light transition-colors duration-300"
@@ -125,7 +125,7 @@ export default function ContactMe() {
                                 </a>
                             </div>
                             <div class="flex items-center">
-                                <FiGithub class="w-6 h-6 text-roland-red mr-4" />
+                                <FiGithub class="w-6 h-6 text-roland-red dark:text-roland-red-light mr-4" />
                                 <a
                                     href="https://github.com/Simon9991"
                                     target="_blank"
@@ -136,7 +136,7 @@ export default function ContactMe() {
                                 </a>
                             </div>
                             <div class="flex items-center">
-                                <FiLinkedin class="w-6 h-6 text-roland-red mr-4" />
+                                <FiLinkedin class="w-6 h-6 text-roland-red dark:text-roland-red-light mr-4" />
                                 <a
                                     href="/"
                                     target="_blank"

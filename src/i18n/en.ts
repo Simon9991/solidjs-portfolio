@@ -47,6 +47,13 @@ export const dict = {
                     'Developed robust anti-cheating tools using Rust, leveraging low-level programming techniques to ensure fair gameplay in online environments.',
             },
             {
+                id: 'portfolio',
+                name: 'This Portfolio',
+                tags: ['SolidJS', 'TailwindCSS'],
+                description:
+                    'Created a responsive and modern portfolio website using SolidJS for efficient rendering and TailwindCSS for streamlined styling.',
+            },
+            {
                 id: 'chess-ai',
                 name: 'Chess AI',
                 tags: ['C', 'C++', 'Rust'],
@@ -54,11 +61,11 @@ export const dict = {
                     'Implemented a chess AI engine in multiple languages (C, C++, Rust) to compare performance and explore language-specific optimizations.',
             },
             {
-                id: 'portfolio',
-                name: 'This Portfolio',
-                tags: ['SolidJS', 'TailwindCSS'],
+                id: 'address-fixer',
+                name: 'Address Fixer',
+                tags: ['Rust', 'Google Maps API'],
                 description:
-                    'Created a responsive and modern portfolio website using SolidJS for efficient rendering and TailwindCSS for streamlined styling.',
+                    'Created a utility in Rust that validates and corrects addresses by cross-referencing with the Google Maps API, improving data accuracy for location-based services.',
             },
             {
                 id: '3d-game-opengl',
@@ -73,13 +80,6 @@ export const dict = {
                 tags: ['C', 'C++'],
                 description:
                     'Crafted my own terminal shell, based on bash, to learn more about how a shell works under the hood.',
-            },
-            {
-                id: 'address-fixer',
-                name: 'Address Fixer',
-                tags: ['Rust', 'Google Maps API'],
-                description:
-                    'Created a utility in Rust that validates and corrects addresses by cross-referencing with the Google Maps API, improving data accuracy for location-based services.',
             },
         ],
     },

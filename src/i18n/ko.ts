@@ -43,6 +43,13 @@ export const dict: Dict = {
                     'Rust를 사용하여 강력한 안티치팅 도구 개발, 온라인 환경에서 공정한 게임플레이를 보장하기 위해 저수준 프로그래밍 기술 활용.',
             },
             {
+                id: 'portfolio',
+                name: '이 포트폴리오',
+                tags: ['SolidJS', 'TailwindCSS'],
+                description:
+                    '효율적인 렌더링을 위해 SolidJS를, 간소화된 스타일링을 위해 TailwindCSS를 사용하여 반응형 및 현대적인 포트폴리오 웹사이트 제작.',
+            },
+            {
                 id: 'chess-ai',
                 name: '체스 AI',
                 tags: ['C', 'C++', 'Rust'],
@@ -50,11 +57,11 @@ export const dict: Dict = {
                     '여러 언어(C, C++, Rust)로 체스 AI 엔진을 구현하여 성능을 비교하고 언어별 최적화를 탐구.',
             },
             {
-                id: 'portfolio',
-                name: '이 포트폴리오',
-                tags: ['SolidJS', 'TailwindCSS'],
+                id: 'address-fixer',
+                name: '주소 수정기',
+                tags: ['Rust', 'Google Maps API'],
                 description:
-                    '효율적인 렌더링을 위해 SolidJS를, 간소화된 스타일링을 위해 TailwindCSS를 사용하여 반응형 및 현대적인 포트폴리오 웹사이트 제작.',
+                    'Google Maps API와 대조하여 주소를 검증하고 수정하는 Rust 유틸리티 생성, 위치 기반 서비스의 데이터 정확도 향상.',
             },
             {
                 id: '3d-game-opengl',
@@ -69,13 +76,6 @@ export const dict: Dict = {
                 tags: ['C', 'C++'],
                 description:
                     '쉘이 내부적으로 어떻게 작동하는지 더 자세히 알아보기 위해 bash를 기반으로 자체 터미널 쉘 제작.',
-            },
-            {
-                id: 'address-fixer',
-                name: '주소 수정기',
-                tags: ['Rust', 'Google Maps API'],
-                description:
-                    'Google Maps API와 대조하여 주소를 검증하고 수정하는 Rust 유틸리티 생성, 위치 기반 서비스의 데이터 정확도 향상.',
             },
         ],
     },

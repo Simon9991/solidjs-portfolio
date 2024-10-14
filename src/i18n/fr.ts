@@ -44,6 +44,13 @@ export const dict: Dict = {
                     "Développement d'outils anti-triche robustes en utilisant Rust, exploitant des techniques de programmation bas niveau pour assurer un gameplay équitable dans les environnements en ligne.",
             },
             {
+                id: 'portfolio',
+                name: 'Ce Portfolio',
+                tags: ['SolidJS', 'TailwindCSS'],
+                description:
+                    "Création d'un site web de portfolio moderne et réactif en utilisant SolidJS pour un rendu efficace et TailwindCSS pour un style rationalisé.",
+            },
+            {
                 id: 'chess-ai',
                 name: "IA d'Échecs",
                 tags: ['C', 'C++', 'Rust'],
@@ -51,11 +58,11 @@ export const dict: Dict = {
                     "Implémentation d'un moteur d'IA d'échecs dans plusieurs langages (C, C++, Rust) pour comparer les performances et explorer les optimisations spécifiques à chaque langage.",
             },
             {
-                id: 'portfolio',
-                name: 'Ce Portfolio',
-                tags: ['SolidJS', 'TailwindCSS'],
+                id: 'address-fixer',
+                name: "Correcteur d'Adresses",
+                tags: ['Rust', 'API Google Maps'],
                 description:
-                    "Création d'un site web de portfolio moderne et réactif en utilisant SolidJS pour un rendu efficace et TailwindCSS pour un style rationalisé.",
+                    "Création d'un utilitaire en Rust qui valide et corrige les adresses en les comparant à l'API Google Maps, améliorant la précision des données pour les services basés sur la localisation.",
             },
             {
                 id: '3d-game-opengl',
@@ -70,13 +77,6 @@ export const dict: Dict = {
                 tags: ['C', 'C++'],
                 description:
                     "Création de mon propre shell terminal, basé sur bash, pour mieux comprendre le fonctionnement interne d'un shell.",
-            },
-            {
-                id: 'address-fixer',
-                name: "Correcteur d'Adresses",
-                tags: ['Rust', 'API Google Maps'],
-                description:
-                    "Création d'un utilitaire en Rust qui valide et corrige les adresses en les comparant à l'API Google Maps, améliorant la précision des données pour les services basés sur la localisation.",
             },
         ],
     },
