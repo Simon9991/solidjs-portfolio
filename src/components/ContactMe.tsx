@@ -58,7 +58,7 @@ export default function ContactMe() {
                                     value={name()}
                                     onInput={(e) => setName(e.currentTarget.value)}
                                     required
-                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-hangul-gray dark:text-hangul-silver"
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-hangul-gray dark:text-hangul-silver hover:border-roland-red dark:hover:border-roland-red-light transition-all duration-300"
                                 />
                             </div>
                             <div>
@@ -74,7 +74,7 @@ export default function ContactMe() {
                                     value={email()}
                                     onInput={(e) => setEmail(e.currentTarget.value)}
                                     required
-                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-hangul-gray dark:text-hangul-silver"
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-hangul-gray dark:text-hangul-silver hover:border-roland-red dark:hover:border-roland-red-light transition-all duration-300"
                                 />
                             </div>
                             <div>
@@ -90,7 +90,7 @@ export default function ContactMe() {
                                     onInput={(e) => setMessage(e.currentTarget.value)}
                                     required
                                     rows={4}
-                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-hangul-gray dark:text-hangul-silver"
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-hangul-gray dark:text-hangul-silver hover:border-roland-red dark:hover:border-roland-red-light transition-all duration-300"
                                 />
                             </div>
                             <button
