@@ -1,4 +1,5 @@
 import { createSignal, onMount, createEffect, type JSX, For } from 'solid-js';
+import { useDarkMode } from './DarkMode';
 
 interface Particle {
     x: number;
@@ -13,6 +14,14 @@ interface Particle {
 function ParticleBackground() {
     let canvasRef: HTMLCanvasElement | undefined;
     const [size, setSize] = createSignal({ width: window.innerWidth, height: window.innerHeight });
+    const [isDarkMode] = useDarkMode();
+
+    let color = isDarkMode() ? 'rgba(200, 200, 200' : 'rgba(255, 255, 0';
+
+    // When isDarkMode changes, update the color
+    createEffect(() => {
+        color = isDarkMode() ? 'rgba(200, 200, 200' : 'rgba(230, 75,53';
+    });
 
     onMount(() => {
         const canvas = canvasRef;
@@ -55,7 +64,7 @@ function ParticleBackground() {
                 const y = particle.y * scale + size().height / 2;
                 const particleSize = particle.size * scale;
 
-                ctx.fillStyle = `rgba(200, 200, 200, ${1 - particle.z / maxDepth})`;
+                ctx.fillStyle = `${color} , ${1 - particle.z / maxDepth})`;
                 ctx.beginPath();
                 ctx.arc(x, y, particleSize, 0, Math.PI * 2);
                 ctx.fill();
@@ -95,7 +104,7 @@ function ParticleBackground() {
                         const averageDepth = (particleA.z + particleB.z) / 2;
                         const lineOpacity = 0.3 * (1 - averageDepth / maxDepth);
 
-                        ctx.strokeStyle = `rgba(200, 200, 200, ${lineOpacity})`;
+                        ctx.strokeStyle = `${color}, ${lineOpacity})`;
                         ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(x1, y1);
@@ -129,7 +138,9 @@ function ParticleBackground() {
         }
     });
 
-    return <canvas ref={canvasRef} class="fixed inset-0 w-full h-full bg-gray-900" />;
+    return (
+        <canvas ref={canvasRef} class="fixed inset-0 w-full h-full dark:bg-gray-900 bg-[#F5F5F5]" />
+    );
 }
 
 function Section(props: { children: JSX.Element; class?: string }) {

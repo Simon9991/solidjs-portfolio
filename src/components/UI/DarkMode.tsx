@@ -11,7 +11,7 @@ const DarkModeContext = createContext<DarkModeContextType>();
 
 // Create a provider component
 export function DarkModeProvider(props: { children: JSX.Element }) {
-    const [isDarkMode, setIsDarkMode] = createSignal(false);
+    const [isDarkMode, setIsDarkMode] = createSignal(true);
 
     const darkModeUtils = {
         toggle: () => setIsDarkMode(!isDarkMode()),

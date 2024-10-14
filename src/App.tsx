@@ -30,15 +30,26 @@ const App: Component = () => {
     dict();
 
     return (
-        <div class="dark">
+        <div class={isDarkMode() ? 'dark' : ''}>
             <ParticlesEffect>
-                <div class="fixed inset-0 w-full bg-gradient-to-b from-black to-transparent to-100% h-44" />
-                <Greeting />
-                <AboutMe />
-                <TechUniverse />
-                <ContactMe />
+                <div class="fixed inset-0 w-full bg-gradient-to-b dark:from-black from-white to-transparent to-100% h-44 flex justify-end p-6 gap-6">
+                    {/* <h1 class="font-bold text-4xl mb-0 text-roland-red dark:text-roland-red-light">
+                        SB. Developer
+                    </h1> */}
+                    <LanguageSelect />
+                    <DarkModeToggle />
+                </div>
+                <Suspense fallback={<LoadingIndicator />}>
+                    <Show when={dict()}>
+                        <Greeting />
+                        <AboutMe />
+                        <TechUniverse />
+                        <ContactMe />
+                    </Show>
+                </Suspense>
             </ParticlesEffect>
         </div>
+
         // <div
         //     class={`${isDarkMode() ? 'dark' : ''} min-h-screen relative overflow-auto transition-all dark:bg-midnight-blue bg-soft-white`}
         // >
