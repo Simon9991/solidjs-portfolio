@@ -33,7 +33,7 @@ export default function AboutMe() {
                 <h2 class="text-4xl font-bold text-center text-roland-red dark:text-roland-red-light mb-6">
                     {t('aboutMe.title')}
                 </h2>
-                <div class="grid md:flex md:flex-row gap-12 items-center bg-cassis-lavender-accent bg-opacity-5 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="grid md:flex md:flex-row gap-12 items-center bg-cassis-lavender-accent bg-opacity-5 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm">
                     <div class="space-y-6">
                         <p class="text-lg text-hangul-gray dark:text-hangul-silver leading-relaxed flex flex-col gap-2">
                             <For each={t('aboutMe.description')}>
@@ -42,14 +42,14 @@ export default function AboutMe() {
                         </p>
                     </div>
                     <div class="relative flex w-fit md:mx-0 md:ml-auto mx-auto">
-                        <div class="w-64 h-64 mx-auto bg-white rounded-full overflow-hidden shadow-lg">
+                        <div class="w-64 h-64 mx-auto rounded-full overflow-hidden shadow-lg">
                             <img
                                 src="/images/pfp.JPG"
                                 alt="Profile"
                                 class="w-full h-full object-cover"
                             />
                         </div>
-                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-3 shadow-lg">
+                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-800 dark:bg-opacity-70 backdrop-blur-sm rounded-full p-3 shadow-lg">
                             <FiArrowDown class="w-7 h-7 text-roland-red dark:text-roland-red-light animate-bounce" />
                         </div>
                     </div>

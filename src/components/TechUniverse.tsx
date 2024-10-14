@@ -25,7 +25,7 @@ export default function TechUniverse() {
     return (
         <section class="py-12">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center text-roland-red mb-12">
+                <h2 class="text-4xl font-bold text-center text-roland-red dark:text-roland-red-light mb-12">
                     {t('techUniverse.title')}
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -34,7 +34,7 @@ export default function TechUniverse() {
                             const Icon = projectIcons[project.id as keyof typeof projectIcons];
                             return (
                                 <Motion.div
-                                    class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+                                    class="bg-white dark:bg-gray-800 dark:bg-opacity-40 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden"
                                     animate={{
                                         scale: hoveredProject() === project.name ? 1.05 : 1,
                                     }}

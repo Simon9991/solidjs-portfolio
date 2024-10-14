@@ -11,6 +11,7 @@ import { useLanguageSelect } from './components/Stores/LanguageSelectSignal';
 import LoadingIndicator from './components/UI/LoadingIndicator';
 import AboutMe from './components/AboutMe';
 import ContactMe from './components/ContactMe';
+import ParticlesEffect from './components/UI/ParticlesEffect';
 
 export type Locale = 'en' | 'ko' | 'fr';
 export type RawDictionary = Dict;
@@ -29,26 +30,35 @@ const App: Component = () => {
     dict();
 
     return (
-        <div
-            class={`${isDarkMode() ? 'dark' : ''} min-h-screen relative overflow-auto transition-all dark:bg-midnight-blue bg-soft-white`}
-        >
-            <Suspense fallback={<LoadingIndicator />}>
-                <Show when={dict()}>
-                    <div class="w-full fixed z-10 dark:bg-black dark:bg-opacity-10 bg-hangul-gray bg-opacity-10 top-0 flex items-center justify-between px-8 backdrop-blur-sm h-20">
-                        <h1 class="font-bold text-4xl mb-0 text-roland-red">SB. Dev.</h1>
-                        <div class="flex items-center gap-4">
-                            <LanguageSelect />
-                            <DarkModeToggle />
-                        </div>
-                    </div>
-
-                    <Greeting />
-                    <AboutMe />
-                    <TechUniverse />
-                    <ContactMe />
-                </Show>
-            </Suspense>
+        <div class="dark">
+            <ParticlesEffect>
+                <div class="fixed inset-0 w-full bg-gradient-to-b from-black to-transparent to-100% h-44" />
+                <Greeting />
+                <AboutMe />
+                <TechUniverse />
+                <ContactMe />
+            </ParticlesEffect>
         </div>
+        // <div
+        //     class={`${isDarkMode() ? 'dark' : ''} min-h-screen relative overflow-auto transition-all dark:bg-midnight-blue bg-soft-white`}
+        // >
+        //     <Suspense fallback={<LoadingIndicator />}>
+        //         <Show when={dict()}>
+        //             <div class="w-full fixed z-10 dark:bg-black dark:bg-opacity-10 bg-hangul-gray bg-opacity-10 top-0 flex items-center justify-between px-8 backdrop-blur-sm h-20">
+        //                 <h1 class="font-bold text-4xl mb-0 text-roland-red">SB. Dev.</h1>
+        //                 <div class="flex items-center gap-4">
+        //                     <LanguageSelect />
+        //                     <DarkModeToggle />
+        //                 </div>
+        //             </div>
+
+        //             <Greeting />
+        //             <AboutMe />
+        //             <TechUniverse />
+        //             <ContactMe />
+        //         </Show>
+        //     </Suspense>
+        // </div>
     );
 };
 
