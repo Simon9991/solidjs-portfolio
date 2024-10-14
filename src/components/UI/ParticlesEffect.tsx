@@ -36,7 +36,7 @@ function ParticleBackground() {
 
         window.addEventListener('resize', updateSize);
 
-        const particleCount = 150;
+        const particleCount = window.innerWidth < 768 ? 50 : 150;
         const particles: Particle[] = [];
         const maxDepth = 5;
         const perspective = 800;
