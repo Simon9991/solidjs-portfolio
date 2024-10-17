@@ -1,11 +1,25 @@
-import { createSignal, For, onCleanup, onMount } from 'solid-js';
-import { Motion } from 'solid-motionone';
-import { type Language, LanguageOptions, useLanguageSelect } from '../Stores/LanguageSelectSignal';
+import { createSignal, For, onCleanup, onMount } from "solid-js";
+import { Motion } from "solid-motionone";
+import {
+    type Language,
+    LanguageOptions,
+    useLanguageSelect,
+} from "../Stores/LanguageSelectSignal";
 
 const languages = [
-    { code: LanguageOptions.en, name: 'English', short: 'EN', flag: '/images/en-flag.png' },
-    { code: LanguageOptions.fr, name: 'Français', short: 'FR', flag: '/images/fr-flag.png' },
-    { code: LanguageOptions.ko, name: '한국어', short: '한', flag: '/images/ko-flag.png' },
+    {
+        code: LanguageOptions.en,
+        name: "English",
+        short: "EN",
+        flag: "/images/en-flag.png",
+    },
+    {
+        code: LanguageOptions.fr,
+        name: "Français",
+        short: "FR",
+        flag: "/images/fr-flag.png",
+    },
+    // { code: LanguageOptions.ko, name: '한국어', short: '한', flag: '/images/ko-flag.png' },
 ];
 
 export default function LanguageSelect() {
@@ -31,11 +45,11 @@ export default function LanguageSelect() {
     };
 
     onMount(() => {
-        window.addEventListener('click', handleClickOutside);
+        window.addEventListener("click", handleClickOutside);
     });
 
     onCleanup(() => {
-        window.removeEventListener('click', handleClickOutside);
+        window.removeEventListener("click", handleClickOutside);
     });
 
     return (
@@ -46,7 +60,9 @@ export default function LanguageSelect() {
                 type="button"
             >
                 <img
-                    src={languages.find((lang) => lang.code === language())?.flag}
+                    src={
+                        languages.find((lang) => lang.code === language())?.flag
+                    }
                     alt={language()}
                     class="w-5 h-5 rounded-full object-cover"
                 />
@@ -60,7 +76,7 @@ export default function LanguageSelect() {
                 animate={{
                     opacity: isOpen() ? 1 : 0,
                     scale: isOpen() ? 1 : 0.95,
-                    display: isOpen() ? 'block' : 'none',
+                    display: isOpen() ? "block" : "none",
                 }}
                 transition={{ duration: 0.1 }}
                 class="absolute mt-2 w-40 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-10"
@@ -77,7 +93,7 @@ export default function LanguageSelect() {
                                 onClick={() => selectLanguage(lang.code)}
                                 class="flex items-center w-full px-4 py-2 text-sm text-hangul-gray dark:text-hangul-silver hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
                                 classList={{
-                                    'bg-seoul-sky bg-opacity-20 dark:bg-slate-700 dark:bg-opacity-100':
+                                    "bg-seoul-sky bg-opacity-20 dark:bg-slate-700 dark:bg-opacity-100":
                                         lang.code === language(),
                                 }}
                                 role="menuitem"

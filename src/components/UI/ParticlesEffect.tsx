@@ -1,5 +1,5 @@
-import { createSignal, onMount, createEffect, type JSX, For } from 'solid-js';
-import { useDarkMode } from './DarkMode';
+import { createSignal, onMount, createEffect, type JSX, For } from "solid-js";
+import { useDarkMode } from "./DarkMode";
 
 interface Particle {
     x: number;
@@ -13,30 +13,34 @@ interface Particle {
 
 function ParticleBackground() {
     let canvasRef: HTMLCanvasElement | undefined;
-    const [size, setSize] = createSignal({ width: window.innerWidth, height: window.innerHeight });
+    const [size, setSize] = createSignal({
+        width: window.innerWidth,
+        height: window.innerHeight,
+    });
     const [isDarkMode] = useDarkMode();
 
-    let color = isDarkMode() ? 'rgba(200, 200, 200' : 'rgba(255, 255, 0';
+    let color = isDarkMode() ? "rgba(200, 200, 200" : "rgba(255, 255, 0";
 
     // When isDarkMode changes, update the color
     createEffect(() => {
-        color = isDarkMode() ? 'rgba(200, 200, 200' : 'rgba(230, 75,53';
+        color = isDarkMode() ? "rgba(200, 200, 200" : "rgba(230, 75,53";
     });
 
     onMount(() => {
         const canvas = canvasRef;
         if (!canvas) return;
 
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
         const updateSize = () => {
             setSize({ width: window.innerWidth, height: window.innerHeight });
         };
 
-        window.addEventListener('resize', updateSize);
+        window.addEventListener("resize", updateSize);
 
-        const particleCount = window.innerWidth < 768 ? 50 : window.innerWidth < 1440 ? 100 : 150;
+        const particleCount =
+            window.innerWidth < 768 ? 40 : window.innerWidth < 1440 ? 75 : 100;
         const particles: Particle[] = [];
         const maxDepth = 5;
         const perspective = 800;
@@ -73,9 +77,15 @@ function ParticleBackground() {
                 particle.y += particle.vy * (1 - particle.z / maxDepth);
                 particle.z += particle.vz;
 
-                if (particle.x < -size().width / 2 || particle.x > size().width / 2)
+                if (
+                    particle.x < -size().width / 2 ||
+                    particle.x > size().width / 2
+                )
                     particle.vx *= -1;
-                if (particle.y < -size().height / 2 || particle.y > size().height / 2)
+                if (
+                    particle.y < -size().height / 2 ||
+                    particle.y > size().height / 2
+                )
                     particle.vy *= -1;
                 if (particle.z < 0 || particle.z > maxDepth) particle.vz *= -1;
             }
@@ -94,8 +104,10 @@ function ParticleBackground() {
                     const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
                     if (distance < 150) {
-                        const scaleA = perspective / (perspective + particleA.z);
-                        const scaleB = perspective / (perspective + particleB.z);
+                        const scaleA =
+                            perspective / (perspective + particleA.z);
+                        const scaleB =
+                            perspective / (perspective + particleB.z);
                         const x1 = particleA.x * scaleA + size().width / 2;
                         const y1 = particleA.y * scaleA + size().height / 2;
                         const x2 = particleB.x * scaleB + size().width / 2;
@@ -127,7 +139,7 @@ function ParticleBackground() {
 
         return () => {
             cancelAnimationFrame(animationId);
-            window.removeEventListener('resize', updateSize);
+            window.removeEventListener("resize", updateSize);
         };
     });
 
@@ -139,7 +151,10 @@ function ParticleBackground() {
     });
 
     return (
-        <canvas ref={canvasRef} class="fixed inset-0 w-full h-full dark:bg-gray-900 bg-[#F5F5F5]" />
+        <canvas
+            ref={canvasRef}
+            class="fixed inset-0 w-full h-full dark:bg-gray-900 bg-[#F5F5F5]"
+        />
     );
 }
 
@@ -172,11 +187,11 @@ function Section(props: { children: JSX.Element; class?: string }) {
     return (
         <div
             ref={ref}
-            class={`min-h-screen flex items-center justify-center transition-all duration-1000 ${props.class || ''}`}
+            class={`min-h-screen flex items-center justify-center transition-all duration-1000 ${props.class || ""}`}
             classList={{
-                'opacity-100 translate-y-0': isVisible(),
-                'opacity-0 translate-y-10': !isVisible(),
-                'translate-y-0': isVisible(),
+                "opacity-100 translate-y-0": isVisible(),
+                "opacity-0 translate-y-10": !isVisible(),
+                "translate-y-0": isVisible(),
             }}
         >
             {props.children}
@@ -184,7 +199,9 @@ function Section(props: { children: JSX.Element; class?: string }) {
     );
 }
 
-export default function ScrollingParticlePage(props: { children: JSX.Element }) {
+export default function ScrollingParticlePage(props: {
+    children: JSX.Element;
+}) {
     return (
         <div class="relative">
             <ParticleBackground />
