@@ -14,6 +14,11 @@ export type Dictionary = i18n.Flatten<RawDictionary>;
 const App: Component = () => {
     return (
         <>
+            <img
+                src="/images/bg-dark-1.jpg"
+                alt="background"
+                class="-inset-y-1/2 fixed"
+            />
             <Greeting />
             <AboutMe />
             <TechUniverse />
