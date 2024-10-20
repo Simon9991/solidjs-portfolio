@@ -7,5 +7,14 @@ body {
     font-family: "Noto Sans KR", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* background-color: #1e293b; */
+    min-height: 100dvh;
+}
+
+.navbar {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
 }

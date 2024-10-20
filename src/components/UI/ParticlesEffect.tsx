@@ -11,7 +11,7 @@ interface Particle {
     size: number;
 }
 
-function ParticleBackground() {
+export function ParticleBackground() {
     let canvasRef: HTMLCanvasElement | undefined;
     const [size, setSize] = createSignal({
         width: window.innerWidth,
@@ -23,7 +23,7 @@ function ParticleBackground() {
 
     // When isDarkMode changes, update the color
     createEffect(() => {
-        color = isDarkMode() ? "rgba(200, 200, 200" : "rgba(230, 75,53";
+        color = isDarkMode() ? "rgba(200, 200, 200" : "rgba(230, 75, 53";
     });
 
     onMount(() => {
@@ -40,10 +40,10 @@ function ParticleBackground() {
         window.addEventListener("resize", updateSize);
 
         const particleCount =
-            window.innerWidth < 768 ? 40 : window.innerWidth < 1440 ? 75 : 100;
+            window.innerWidth < 768 ? 30 : window.innerWidth < 1440 ? 60 : 80;
         const particles: Particle[] = [];
-        const maxDepth = 5;
-        const perspective = 800;
+        const maxDepth = 8;
+        const perspective = 900;
 
         for (let i = 0; i < particleCount; i++) {
             particles.push({
@@ -153,59 +153,7 @@ function ParticleBackground() {
     return (
         <canvas
             ref={canvasRef}
-            class="fixed inset-0 w-full h-full dark:bg-gray-900 bg-[#F5F5F5]"
+            class="fixed inset-0 h-dvh min-h-dvh w-dvw min-w-[100dvw] dark:bg-gray-900 bg-zinc-50"
         />
-    );
-}
-
-function Section(props: { children: JSX.Element; class?: string }) {
-    const [isVisible, setIsVisible] = createSignal(false);
-    let ref: HTMLDivElement | undefined;
-
-    onMount(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.unobserve(entry.target);
-                }
-            },
-            { threshold: 0.1 },
-        );
-
-        if (ref) {
-            observer.observe(ref);
-        }
-
-        return () => {
-            if (ref) {
-                observer.unobserve(ref);
-            }
-        };
-    });
-
-    return (
-        <div
-            ref={ref}
-            class={`min-h-screen flex items-center justify-center transition-all duration-1000 ${props.class || ""}`}
-            classList={{
-                "opacity-100 translate-y-0": isVisible(),
-                "opacity-0 translate-y-10": !isVisible(),
-                "translate-y-0": isVisible(),
-            }}
-        >
-            {props.children}
-        </div>
-    );
-}
-
-export default function ScrollingParticlePage(props: {
-    children: JSX.Element;
-}) {
-    return (
-        <div class="relative">
-            <ParticleBackground />
-            <div class="relative z-10">{props.children}</div>
-        </div>
     );
 }

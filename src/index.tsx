@@ -10,13 +10,13 @@ import {
 } from "./components/Stores/LanguageSelectSignal";
 import { Route, Router } from "@solidjs/router";
 import { createResource, type JSXElement, Show, Suspense } from "solid-js";
-import ParticlesEffect from "./components/UI/ParticlesEffect";
 import DarkModeToggle from "./components/UI/DarkModeToggleSwitch";
 import LanguageSelect from "./components/UI/LanguageSelect";
 import LoadingIndicator from "./components/UI/LoadingIndicator";
 import { type Dict, dict } from "./i18n/en";
 import * as i18n from "@solid-primitives/i18n";
 import RouteTest from "./pages/Test";
+import { ParticleBackground } from "./components/UI/ParticlesEffect";
 
 const root = document.getElementById("root");
 
@@ -44,15 +44,16 @@ const Layout = (props: { children?: JSXElement }) => {
 
     return (
         <div class={isDarkMode() ? "dark" : ""}>
-            <ParticlesEffect>
-                <div class="fixed inset-0 z-40 w-full bg-gradient-to-b dark:from-black from-white to-transparent to-100% h-44 flex justify-end p-6 gap-6">
-                    <LanguageSelect />
-                    <DarkModeToggle />
-                </div>
+            <ParticleBackground />
+            <div class="fixed inset-0 z-10 w-full h-fit dark:bg-seoul-sky-dark dark:bg-opacity-10 backdrop-blur-sm bg-seoul-sky bg-opacity-10 flex justify-end p-6 gap-6">
+                <LanguageSelect />
+                <DarkModeToggle />
+            </div>
+            <div class="relative z-[5]">
                 <Suspense fallback={<LoadingIndicator />}>
                     <Show when={dict()}>{props.children}</Show>
                 </Suspense>
-            </ParticlesEffect>
+            </div>
         </div>
     );
 };
