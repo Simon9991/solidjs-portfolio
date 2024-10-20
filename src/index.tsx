@@ -42,7 +42,11 @@ const Layout = (props: { children?: JSXElement }) => {
     dict(); // trigger the fetch
     return (
         <div id="main" class={`${isDarkMode() ? 'dark' : ''} dark:bg-gray-900 bg-zinc-50`}>
-            <img src="/images/bg-dark-1.jpg" alt="background" class="-inset-y-1/2 fixed z-0" />
+            <img
+                src="/images/bg-dark-1.jpg"
+                alt="background"
+                class="w-full h-full fixed z-0 object-cover"
+            />
             {/* Top navbar */}
             <div class="fixed inset-0 z-10 w-full h-fit dark:bg-seoul-sky-dark dark:bg-opacity-10 backdrop-blur-sm bg-seoul-sky bg-opacity-10 flex justify-between p-4 items-center">
                 <Navigation />

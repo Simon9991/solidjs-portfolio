@@ -1,6 +1,6 @@
 const Posts = () => {
     return (
-        <div class="w-full min-h-screen h-full flex justify-center items-center">
+        <div class="w-full min-h-screen h-full flex justify-center items-center p-8">
             <div class="rounded-3xl p-px bg-gradient-to-b from-roland-red to-transparent to-60%">
                 <div
                     class={`bg-gradient-to-b from-gray-800 from-50% to-transparent bg-opacity-80 dark:bg-opacity-90 dark:backdrop-blur-sm p-10 ${'rounded-[calc(1.5rem-1px)]'}`}
